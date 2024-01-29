@@ -16,8 +16,8 @@ app.set('json spaces', 2);
 app.post('/', async (req, res) => {
   // Example JSON response
   log('...Logging message...');
-  log(new Date().toISOString());
-  log(req.body);
+  log('> America/Bogota time:',new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' }));
+  log(JSON.stringify(req.body, null, 4));
 
   res.sendStatus(200);
 });
